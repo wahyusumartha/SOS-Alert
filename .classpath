@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jaxb-ri-20081030/lib/activation.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jaxb-ri-20081030/lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jaxb-ri-20081030/lib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jaxb-ri-20081030/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jaxb-ri-20081030/lib/jaxb1-impl.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jaxb-ri-20081030/lib/jsr173_1.0_api.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jackson-core-asl-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jersey-client-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jersey-core-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jersey-json-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jersey-server-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/jersey-archive-1.2/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/wahyusumartha/Downloads/Folx/twitter4j-2.2.4-SNAPSHOT/lib/twitter4j-core-2.2.4-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

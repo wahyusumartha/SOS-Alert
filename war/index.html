@@ -1,0 +1,136 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SOS Alert - Save People Around The World Immediately</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="SOS Alert with Google App Engine and Chennel API">
+<meta name="author" content="wahyu sumartha - yoze hariando">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
+<!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script>
+function notif_close(element)
+{
+    jQuery(element).each(function()
+    {
+        jQuery(this).append('<div class="click_to_close"></div>')
+    });
+
+    jQuery(".click_to_close").click(function()
+    {
+        jQuery(this).parent().slideUp(200);
+    });
+}
+</script>
+</head>
+<body>
+<div pub-key="pub-22f6936b-db26-4a11-8a1c-068b30893ebe"
+		sub-key="sub-f0821917-97fc-11e0-80d9-5793e1e53f35" ssl="off"
+		origin="pubsub.pubnub.com" id="pubnub">
+</div>
+<script src="http://cdn.pubnub.com/pubnub-3.1.min.js"></script>
+<script>
+		(function() {
+			// LISTEN FOR MESSAGES
+			PUBNUB.subscribe({
+				channel : "sos_report", // CONNECT TO THIS CHANNEL.
+				error : function() { // LOST CONNECTION (auto reconnects)
+					$("#server-status").text("Lost Connection to Server");
+				},
+				callback : function(message) { // RECEIVED A MESSAGE.
+					var random = Math.floor(Math.random()*101);
+					$("#channel").append(message.description + " <a href='/'>View</a><br/>");
+					$('<div id='+random+' class="message warning closeable">').appendTo('#notification');
+				    $('<p>'+ message.description +' <a href="/">View</a></p>').appendTo('#'+random+''); 
+				    notif_close(".closeable"); 
+				},
+				connect : function() { // CONNECTION ESTABLISHED.
+					$("#server-status").text("Connected to Server");
+				}
+			})
+		})();
+</script>
+	<div id="container">
+		<header id="lookHere">
+			<h1>SOS Alert!</h1>
+			<h2>
+				SOS Alert - Save<span class="orange"> People</span> Around The
+				<span class="green">World</span> Immediately.
+			</h2>
+		</header>
+		<div id="main" role="main">
+			<div class="content">
+				<div class="notif">
+					<div class="content_block">
+                       <h2>Channel Status</h2>
+					   <div class="message success">
+                            <p id="server-status">Trying to Connect ......</p>
+                       </div><!-- end success -->
+
+                       <h2>Notification Messages</h2>
+                       	<div id="notification">
+                       	</div>
+                       	</div><!--end content_block-->
+					 </div><!--end jquery tab-->
+					 <div style="clear: both"></div>
+				<!-- show map -->
+				<div id="map"></div>
+				<!-- show list -->
+				<ul id="list"></ul>
+
+				<!-- show message on map -->
+				<div id="message">
+					<!-- show smoke help -->
+					<div id="smokeSpawnPoint"></div>
+				</div>
+			</div>
+		</div>	
+
+		<footer id="footerSlideContainer">
+			<div id="footerSlideButton"></div>
+			<div id="footerSlideContent">
+				<div id="footerSlideText">
+					<h3>About Us</h3>
+					<p>Hello, This is our project with google app engine and channel api</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="assets/javascript/plugins.js"></script>
+	<script src="assets/javascript/script.js"></script>
+	<script
+		src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAPlEic7CCALGIx11zOUijgxT-YFxLOWiRA5COd-N7phzmJuR0jRTyRGk88-7eiDifpsPKJ6ebsUf_TQ"
+		type="text/javascript">
+	</script>
+	<script type="text/javascript" src="assets/javascript/smokeEffect.js"></script>
+	<script type='text/javascript'>
+            SmokeEffect.imgLocation = "assets/images/smoke.png";
+            SmokeEffect.smokeWidth = 80;
+            SmokeEffect.smokeHeight = 45;
+
+            SmokeEffect.makeEffect("smokeSpawnPoint", 24, 12);
+        </script>
+
+	<!--[if lt IE 7 ]>
+        <script src="assets/javascript/libs/dd_belatedpng.js"></script>
+        <script> DD_belatedPNG.fix('img, .png_bg');</script>
+	<![endif]-->
+
+</body>
+</html>
