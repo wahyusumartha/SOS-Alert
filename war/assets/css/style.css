@@ -295,6 +295,20 @@ body {
 }
 
 /* footer slide show */
+#footerSlideText img{
+    height: 50px;
+    margin-right: 5px;
+}
+
+#footerSlideText .center {
+    display:block;
+    position:relative;
+    left:38%;
+    width:700px;
+}
+
+
+
 #footerSlideContainer {
 	position: fixed;
 	bottom: 0;
@@ -336,6 +350,7 @@ body {
 
 #footerSlideText {
 	padding: 15px 10px 25px 25px;
+	text-align:justify;
 }
 
 /* map css */
